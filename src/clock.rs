@@ -3,10 +3,10 @@
 //! # Example
 //!
 //! ```
-//! # #[macro_use] extern crate tokio_test;
+//! # #[macro_use] extern crate tokio01_test;
 //! # extern crate futures;
 //! # extern crate tokio_timer;
-//! # use tokio_test::clock;
+//! # use tokio01_test::clock;
 //! # use tokio_timer::Delay;
 //! # use std::time::Duration;
 //! # use futures::Future;

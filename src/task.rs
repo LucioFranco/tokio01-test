@@ -6,9 +6,9 @@
 //! poll.
 //!
 //! ```
-//! # #[macro_use] extern crate tokio_test;
+//! # #[macro_use] extern crate tokio01_test;
 //! # extern crate futures;
-//! # use tokio_test::task::MockTask;
+//! # use tokio01_test::task::MockTask;
 //! # use futures::{sync::mpsc, Stream, Sink, Future, Async};
 //! let mut task = MockTask::new();
 //! let (tx, mut rx) = mpsc::channel(5);

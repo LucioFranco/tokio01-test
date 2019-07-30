@@ -1,12 +1,12 @@
 #[macro_use]
-extern crate tokio_test;
+extern crate tokio01_test;
 extern crate futures;
 extern crate tokio_timer;
 
 use futures::Future;
 use std::time::{Duration, Instant};
-use tokio_test::clock::MockClock;
-use tokio_test::task::MockTask;
+use tokio01_test::clock::MockClock;
+use tokio01_test::task::MockTask;
 use tokio_timer::Delay;
 
 #[test]

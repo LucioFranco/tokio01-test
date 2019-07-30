@@ -8,7 +8,7 @@
 //!
 //! ```
 //! # extern crate futures;
-//! # #[macro_use] extern crate tokio_test;
+//! # #[macro_use] extern crate tokio01_test;
 //! # use futures::{Future, future};
 //! let mut fut = future::ok::<(), ()>(());
 //! assert_ready!(fut.poll());
