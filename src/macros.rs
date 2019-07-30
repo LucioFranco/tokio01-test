@@ -27,6 +27,26 @@ macro_rules! assert_ready {
     }};
 }
 
+/// Assert if a poll the poll errored
+#[macro_export]
+macro_rules! assert_err {
+    ($e:expr) => {{
+        match $e {
+            Ok(_) => panic!("Future did not error"),
+            Err(e) => e,
+        }
+    }};
+    ($e:expr, $($msg:tt),+) => {{
+        match $e {
+            Ok(_) => {
+                let msg = format_args!($($msg),+);
+                panic!("not ready; {}", msg)
+            }
+            Err(e) => e,
+        }
+    }};
+}
+
 /// Asset if the poll is not ready
 #[macro_export]
 macro_rules! assert_not_ready {
@@ -106,6 +126,12 @@ mod tests {
     fn assert_ready_err() {
         let mut fut = future::err::<(), ()>(());
         assert_ready!(fut.poll());
+    }
+
+    #[test]
+    fn assert_err() {
+        let mut fut = future::err::<(), ()>(());
+        assert_err!(fut.poll());
     }
 
     #[test]
